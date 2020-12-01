@@ -22,6 +22,24 @@ namespace EmployeeApp
             Employee1 e4 = new Employee1();
             Console.WriteLine("Empid: " + e4.EMPNO + ", Net salary: " + e4.GetNetSalary());
             Console.ReadLine();
+
+
+            Console.WriteLine("Empid: " + e4.EMPNO + ", Net salary: " + e4.GetNetSalary());
+            Console.ReadLine();
+            
+            Console.WriteLine("Empid: " + e3.EMPNO + ", Name: " + e3.NAME + ", Basic salary: " + e3.BASIC + ", Net salary: " + e3.GetNetSalary());
+            Console.ReadLine();
+
+            Console.WriteLine("Empid: " + e2.EMPNO + ", Name: " + e2.NAME + ", Basic salary: " + e2.BASIC + ", Net salary: " + e2.GetNetSalary());
+            Console.ReadLine();
+            
+            Console.WriteLine("Empid: " + e1.EMPNO + ", Name: " + e1.NAME + ", Basic salary: " + e1.BASIC + ", Dept No: " + e1.DEPTNO + ", Net salary: " + e1.GetNetSalary());
+            Console.ReadLine();
+         
+
+            
+
+
         }
     }
 
@@ -37,24 +55,28 @@ namespace EmployeeApp
         #region Constructors
         public Employee1()
         {
-            
+            EmpNo++;
+            this.EMPNO += EmpNo;
         }
         public Employee1(string Name, decimal Basic, short DeptNo)
         {
-
+            EmpNo++;
+            this.EMPNO = EmpNo;
             this.NAME = Name;
             this.BASIC = Basic;
             this.DEPTNO = DeptNo;
         }
         public Employee1(string Name, decimal Basic)
         {
-
+            EmpNo++;
+            this.EMPNO = EmpNo;
             this.NAME = Name;
             this.BASIC = Basic;
         }
         public Employee1(string Name)
         {
-
+            EmpNo++;
+            this.EMPNO = EmpNo;
             this.NAME = Name;
         }
         #endregion
@@ -75,10 +97,7 @@ namespace EmployeeApp
 
         public int EMPNO
         {
-            get
-            {
-                return EmpNo += 1; 
-            }
+            get;
         }
         public decimal BASIC
         {
