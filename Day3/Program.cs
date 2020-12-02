@@ -11,19 +11,19 @@ namespace Day3Assignment
     {
         static void Main(string[] args)
         {
-            Employee e = new Manager("Manager","mgr", 53000, 1);
-            Console.WriteLine("Empid: " + e.EMPNO + ", Name: " + e.NAME + ", Basic salary: " + e.BASIC + ", Dept No: " + e.DEPTNO );
+            Manager e = new Manager("Manager","mgr", 53000, 1);
+            Console.WriteLine("Empid: " + e.EMPNO +", Designation: "+e.DESIGNATION +", Name: " + e.NAME + ", Basic salary: " + e.BASIC + ", Dept No: " + e.DEPTNO );
             Console.ReadLine();
 
-            Manager m = new GeneralManager("", "General","GM",25000);
-            Console.WriteLine("Empid: " + m.EMPNO + ", Name: " + m.NAME + ", Basic salary: " + m.BASIC );
+            GeneralManager m = new GeneralManager("", "General", "GM", 25000);
+            Console.WriteLine("Empid: " + m.EMPNO +",Perks: "+m.Perks + ", Designation: " + m.DESIGNATION + ", Name: " + m.NAME + ", Basic salary: " + m.BASIC );
             Console.ReadLine();
 
-            Employee ceo = new CEO("", 200000);
+            CEO ceo = new CEO("", 200000);
             Console.WriteLine("Empid: " + ceo.EMPNO + ", Name: " + ceo.NAME + ", Basic salary: " + ceo.BASIC + ", Net salary: " + ceo.CalcNetSalary());
             Console.ReadLine();
 
-            Employee ceo1 = new CEO("CEO", 1000);
+            CEO ceo1 = new CEO("CEO", 1000);
             Console.WriteLine("Empid: " + ceo1.EMPNO + ", Name: " + ceo1.NAME + ", Basic salary: " + ceo1.BASIC + ", Net salary: " + ceo1.CalcNetSalary());
             Console.ReadLine();
 
@@ -143,8 +143,8 @@ namespace Day3Assignment
     #region GM
     public class GeneralManager : Manager
     {
-        string Perks;
-        public GeneralManager(string Perks,string Designation = "mgr", string Name = "Shr", decimal Basic = 100, short DeptNo = 10) : base(Designation, Name, Basic, DeptNo)
+        public string Perks;
+        public GeneralManager(string Perks="perks",string Designation = "mgr", string Name = "Shr", decimal Basic = 100, short DeptNo = 10) : base(Designation, Name, Basic, DeptNo)
         {
             this.Perks = Perks;
         }
