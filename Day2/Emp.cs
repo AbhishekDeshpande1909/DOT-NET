@@ -61,7 +61,7 @@ namespace EmployeeApp
         public Employee1(string Name, decimal Basic, short DeptNo)
         {
             EmpNo++;
-            this.EMPNO = EmpNo;
+            this.EMPNO = +=EmpNo;
             this.NAME = Name;
             this.BASIC = Basic;
             this.DEPTNO = DeptNo;
@@ -69,14 +69,14 @@ namespace EmployeeApp
         public Employee1(string Name, decimal Basic)
         {
             EmpNo++;
-            this.EMPNO = EmpNo;
+            this.EMPNO = +=EmpNo;
             this.NAME = Name;
             this.BASIC = Basic;
         }
         public Employee1(string Name)
         {
             EmpNo++;
-            this.EMPNO = EmpNo;
+            this.EMPNO = +=EmpNo;
             this.NAME = Name;
         }
         #endregion
@@ -122,11 +122,6 @@ namespace EmployeeApp
             }
             get { return DeptNo; }
         }
-
-
-
-
-
         #endregion
 
         public decimal GetNetSalary()
