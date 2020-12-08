@@ -11,7 +11,7 @@ namespace Day8Assignment
         static void Main()
         {
             Employee e = new Employee();
-            decimal basic = e.basic;
+           // decimal basic = e.BASIC;
 
             Func<decimal, decimal, decimal, decimal>  simp = (p,n,r) => (p * n * r) / 100;
             Console.WriteLine(simp(5000,5,3));
@@ -25,12 +25,13 @@ namespace Day8Assignment
             Console.WriteLine(isEven(10));
             Console.ReadLine();
 
-            Func<Employee,decimal > getBasic = emp => emp.basic;
+            Func<Employee,decimal > getBasic = emp => emp.BASIC + 3000;
             Console.WriteLine(getBasic(e));
             Console.ReadLine();
 
-            Func<Employee, bool> checkBasic = empcheck => empcheck.basic > 10000;
+            Func<Employee, bool> checkBasic = empcheck => empcheck.BASIC > 10000;
             Console.WriteLine(checkBasic(e));
+            Console.WriteLine(e.BASIC);
             Console.ReadLine();
 
 
@@ -53,17 +54,19 @@ namespace Day8Assignment
 
     class Employee
     {
-        public decimal basic = 5000;
-        static decimal GetBasic(Employee e)
-        {
-
-            return e.basic;
+        decimal basic = 5000;
         
+        public decimal BASIC
+        {
+            set 
+            {
+                this.basic = value;
+            }
+            get 
+            {
+                return basic;
+            }
         }
 
-        static bool IsGreaterThan10000(Employee e)
-        {
-            return e.basic > 10000;
-        }
     }
 }
